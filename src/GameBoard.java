@@ -36,6 +36,21 @@ public class GameBoard {
         return arr;
     }
 
+    public ArrayList<Row> getRowsofLength(int l){
+        return rows.get(l-1);
+    }
+
+    public ArrayList<Row> getOpponantsRowsOfLengthL(char player, int l){
+        ArrayList<Row> arr = new ArrayList<Row>();
+        for(Row row : rows.get(l-1)){
+            if(row.getPlayer() != player){
+                arr.add(row);
+            }
+        }
+
+        return arr;
+    }
+
     public ArrayList<Row> getPlayerRows(char player){
         ArrayList<Row> arr = new ArrayList<Row>();
         for(int i = 0; i < rows.size(); i++){
