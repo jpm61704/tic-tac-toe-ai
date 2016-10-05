@@ -40,4 +40,9 @@ public class Row {
         length++;
         cells.add(cell);
     }
+
+    public void addOpenEnd(int x, int y){
+        int arr[] = {x,y};
+        openEnds.add(arr);
+    }
 }

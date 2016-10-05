@@ -18,13 +18,28 @@ public class BoardUtility {
     public static void printPlayersRows(GameBoard board, char player){
         ArrayList<Row> rows = board.getPlayerRows(player);
         int i = 0;
+        System.out.println("Player: " + player);
         for (Row row : rows) {
             i++;
-            System.out.print("Row " + i + ": ");
+            System.out.print("\tRow " + i + ": ");
             for (int cell[] : row.getCells()){
-                if(i != 1) System.out.print(",");
                 System.out.print("(" + cell[0]  + "," + cell[1] + ")");
             }
+
+            System.out.print(" | Open Ends: ");
+
+            for (int cell[] : row.getOpenEnds()){
+                System.out.print("(" + cell[0]  + "," + cell[1] + ")");
+            }
+
+            System.out.println();
+        }
+    }
+
+    public static void printAll(GameBoard board, char[] players){
+        printBoard(board);
+        for(char player : players){
+            printPlayersRows(board, player);
         }
     }
 }

@@ -7,14 +7,19 @@ public class Runner {
         GameBoard board = new GameBoard();
 
         board.addPiece('p', 1, 1);
-        board.addPiece('a', 1, 1);
-        board.addPiece('a', 4, 4);
-        board.addPiece('a', 2, 6);
-        board.addPiece('a', 2, 2);
+        board.addPiece('p', 1, 0);
+        board.addPiece('p', 0, 1);
+        board.addPiece('p', 1, 2);
 
 
-        BoardUtility.printBoard(board);
-        BoardUtility.printPlayersRows(board, 'p');
+
+
+
+        BoardUtility.printAll(board, "pa".toCharArray());
+
+        board.addPiece('a', 0, 0);
+
+        BoardUtility.printAll(board, "pa".toCharArray());
 
     }
 }
