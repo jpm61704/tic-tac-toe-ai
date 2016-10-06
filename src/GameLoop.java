@@ -16,16 +16,18 @@ public class GameLoop {
             BoardUtility.printBoard(board);
 
             int move[] = p1.getMove(board);
+
             board.addPiece(p1.getPiece(), move[0], move[1]);
             if(check_win(board) == p1.getPiece()){
                 winner = p1;
                 break;
             }
 
-            System.out.println("Player " + p1.getPiece() + " it is your turn");
+            System.out.println("Player " + p2.getPiece() + " it is your turn");
             BoardUtility.printBoard(board);
 
             move = p2.getMove(board);
+
             board.addPiece(p2.getPiece(), move[0], move[1]);
             if(check_win(board) == p2.getPiece()){
                 winner = p2;
