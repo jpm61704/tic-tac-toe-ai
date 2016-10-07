@@ -7,7 +7,7 @@ public class Runner {
         Player x = new HumanPlayer('X');
         Player o = new BeginnerPlayer('O');
 
-        GameLoop.playGame(x,o);
+        GameLoop.playGame(o,x);
 
     }
 }
